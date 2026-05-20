@@ -5,10 +5,25 @@
 To develop a Python program to find the optimal policy for the given RL environment using SARSA-Learning and compare the state values with the Monte Carlo method.
 
 ## PROBLEM STATEMENT
-Explain the problem statement.
+The problem might involve teaching an agent to interact optimally with an environment (e.g., gym-walk), where the agent must learn to choose actions that maximize cumulative rewards using RL algorithms like SARSA and Value Iteration.
 
 ## SARSA LEARNING ALGORITHM
-Include the steps involved in the SARSA Learning algorithm
+
+1. Initialize the Q-table, learning rate α, discount factor γ, exploration rate ϵ, and the number of episodes.
+
+2. For each episode, start in an initial state s, and choose an action a using the ε-greedy policy.
+
+3. Take action a, observe the reward r and the next state s′ , and choose the next action a′ using the ε-greedy policy.
+
+4. Update the Q-value for the state-action pair (s,a) using the SARSA update rule.
+
+5. Update the current state to s′ and the current action to a′.
+
+6. Repeat steps 3-5 until the episode reaches a terminal state.
+
+7. After each episode, decay the exploration rate 𝜖 and learning rate α, if using decay schedules.
+
+8. Return the Q-table and the learned policy after completing all episodes.
 
 ## SARSA LEARNING FUNCTION
 ### Name: D Vergin Jenifer
@@ -55,9 +70,11 @@ def sarsa(env,
 
 ### Value function:
 <img width="692" height="336" alt="image" src="https://github.com/user-attachments/assets/3033c76e-c2f8-4e51-bd69-1951b6a30e13" />
+
 ### Optimal policy and success rate:
 <img width="985" height="712" alt="image" src="https://github.com/user-attachments/assets/af1954a0-7597-4f2f-912f-cab79afac505" />
 <img width="683" height="163" alt="image" src="https://github.com/user-attachments/assets/8d3352f3-18a7-4e38-83ea-d8ef7111eb6e" />
+
 ### Plot comparing the state value functions of Monte Carlo method and SARSA learning.
 <img width="1691" height="535" alt="image" src="https://github.com/user-attachments/assets/ca2f5c72-f8fb-465a-a8d6-9e93b06dfd7b" />
 <img width="1698" height="572" alt="image" src="https://github.com/user-attachments/assets/a83280e2-2f56-4416-ab4d-7b8c52992169" />
